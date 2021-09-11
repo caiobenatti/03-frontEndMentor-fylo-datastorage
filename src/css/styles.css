@@ -3,8 +3,7 @@
   --greyBlue: hsl(229, 7%, 55%);
   --darkBlue: hsl(228, 56%, 26%);
   --veryDarkBlue: hsl(229, 57%, 11%);
-  --gradient: linear-gradient(to right, hsl(6, 100%, 80%) ,hsl(335, 100%, 65%))
-;
+  --gradient: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
 }
 
 * {
@@ -15,11 +14,91 @@
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 14px;
 }
 
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--veryDarkBlue);
+  background-image: url(../../images/bg-desktop.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .cards .card-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: var(--darkBlue);
+  border-radius: 5px 50px 5px 5px;
+  width: 40%;
+  min-width: 20rem;
+  height: 12rem;
+  padding-left: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .cards .card-1 .icons {
+  padding-top: 2rem;
+}
+
+.container .cards .card-1 .icons .icon {
+  height: 50px;
+  display: inline-block;
+  padding: 0.7rem;
+  margin: 0 0.3rem;
+  border-radius: 10px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.container .cards .card-2 {
+  color: var(--paleBlue);
+  width: 50%;
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    background-image: url(../../images/bg-mobile.png);
+    background-position: center;
+    background-size: cover;
+  }
+}
+
 .attribution {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   font-size: 11px;
   text-align: center;
 }
