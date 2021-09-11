@@ -59,9 +59,9 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: var(--darkBlue);
-  border-radius: 5px 50px 5px 5px;
+  border-radius: 15px 50px 15px 15px;
   width: 40%;
-  min-width: 20rem;
+  min-width: 22rem;
   height: 12rem;
   padding-left: 2rem;
   -webkit-box-pack: center;
@@ -70,20 +70,41 @@ body {
 }
 
 .container .cards .card-1 .icons {
-  padding-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 30px 0 0 0;
 }
 
 .container .cards .card-1 .icons .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
   height: 50px;
-  display: inline-block;
   padding: 0.7rem;
   margin: 0 0.3rem;
   border-radius: 10px;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .container .cards .card-2 {
+  border-radius: 15px;
+  height: 12rem;
+  background-color: var(--darkBlue);
   color: var(--paleBlue);
   width: 50%;
 }
