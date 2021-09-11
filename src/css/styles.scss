@@ -64,6 +64,37 @@ body {
     .card-2 {
       background-color: var(--darkBlue);
       color: var(--paleBlue);
+      padding: 20px 35px;
+
+      .dataBar {
+        display: flex;
+        align-items: center;
+        width: 400px;
+        height: 10px;
+        border-radius: 20px;
+        padding: 2px;
+        background-color: var(--veryDarkBlue);
+
+        .dataValue {
+          display: flex;
+          justify-content: flex-end;
+          height: inherit;
+          background-image: linear-gradient(
+            to right,
+            hsl(6, 100%, 80%),
+            hsl(335, 100%, 65%)
+          );
+          width: 80%;
+          border-radius: 20px;
+        }
+        .whiteDot {
+          background-color: #ffffff;
+          border-radius: 25px;
+          height: inherit;
+          height: 0.75rem;
+          width: 0.75rem;
+        }
+      }
     }
   }
 }
