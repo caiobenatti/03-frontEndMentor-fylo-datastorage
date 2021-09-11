@@ -19,38 +19,7 @@ body {
 }
 
 .container {
-  width: 100vw;
   height: 100vh;
-  background-color: var(--veryDarkBlue);
-  background-image: url(../../images/bg-desktop.png);
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: contain;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.container .cards {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 2rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.container .cards .card-1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -58,15 +27,44 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: var(--darkBlue);
-  border-radius: 15px 50px 15px 15px;
-  width: 40%;
-  min-width: 22rem;
-  height: 12rem;
-  padding-left: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: var(--veryDarkBlue);
+  background-image: url(../../images/bg-desktop.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+}
+
+.container .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.container .cards .cards > * {
+  margin: 0px 15px;
+}
+
+.container .cards .card-1 {
+  background-color: var(--darkBlue);
+  border-radius: 15px 90px 15px 15px;
+  width: auto;
+  min-width: 325px;
+  padding: 30px 35px;
+  padding-right: 15px;
 }
 
 .container .cards .card-1 .icons {
@@ -76,9 +74,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
   padding: 30px 0 0 0;
 }
 
@@ -102,29 +97,41 @@ body {
 }
 
 .container .cards .card-2 {
-  border-radius: 15px;
-  height: 12rem;
   background-color: var(--darkBlue);
   color: var(--paleBlue);
-  width: 50%;
-}
-
-@media screen and (max-width: 375px) {
-  .container {
-    background-image: url(../../images/bg-mobile.png);
-    background-position: center;
-    background-size: cover;
-  }
 }
 
 .attribution {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
   font-size: 11px;
   text-align: center;
 }
 
 .attribution a {
   color: #3e52a3;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    background-image: url(../../images/bg-mobile.png);
+    background-position: center;
+    background-size: cover;
+  }
+  .container .cards {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: relative;
+    width: 90%;
+  }
+  .container .cards .card-2 {
+    margin-top: 1rem;
+  }
+  .container > * {
+    margin: 10px 25px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
