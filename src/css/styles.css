@@ -99,6 +99,11 @@ body {
   border-radius: 15px;
 }
 
+.container .card-2 p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .container .card-2 .popUp {
   position: absolute;
   background-color: #ffffff;
@@ -179,7 +184,6 @@ body {
 }
 
 .container .card-2 .label {
-  margin-top: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -198,6 +202,8 @@ body {
 }
 
 .attribution {
+  position: absolute;
+  top: 95%;
   font-size: 11px;
   text-align: center;
 }
