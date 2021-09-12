@@ -16,8 +16,6 @@
 body {
   font-family: "Raleway", sans-serif;
   font-size: 14px;
-}
-.container {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,72 +26,117 @@ body {
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: contain;
-  .cards {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    position: relative;
-    .cards > * {
-      margin: 0px 15px;
-    }
-    .card-1 {
-      background-color: var(--darkBlue);
-      border-radius: 15px 90px 15px 15px;
-      width: auto;
-      min-width: 325px;
-      padding: 30px 35px;
-      padding-right: 15px;
-      .icons {
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+
+  .cards > * {
+    margin: 0px 15px;
+  }
+  .card-1 {
+    background-color: var(--darkBlue);
+    border-radius: 15px 90px 15px 15px;
+    width: auto;
+    min-width: 325px;
+    padding: 30px 35px;
+    padding-right: 15px;
+    margin-top: -5%;
+    .icons {
+      display: flex;
+      align-items: center;
+      padding: 30px 0 0 0;
+      .icon {
         display: flex;
+        justify-content: center;
         align-items: center;
-        padding: 30px 0 0 0;
-        .icon {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 50px;
-          height: 50px;
-          padding: 0.7rem;
-          margin: 0 0.3rem;
-          border-radius: 10px;
-          text-align: center;
-          background-color: rgba(#000000, 0.5);
-        }
+        width: 50px;
+        height: 50px;
+        padding: 0.7rem;
+        margin: 0 0.3rem;
+        border-radius: 10px;
+        text-align: center;
+        background-color: rgba(#000000, 0.5);
       }
     }
-    .card-2 {
-      background-color: var(--darkBlue);
-      color: var(--paleBlue);
-      padding: 20px 35px;
+  }
+  .card-2 {
+    background-color: var(--darkBlue);
+    color: var(--paleBlue);
+    padding: 20px 35px;
+    font-weight: 400;
+    position: relative;
+    border-radius: 15px;
 
-      .dataBar {
-        display: flex;
+    .popUp {
+      position: absolute;
+      background-color: #ffffff;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      top: -30%;
+      left: 60%;
+      width: fit-content;
+      font-size: 1.75rem;
+      color: #000000;
+
+      span {
+        padding-left: 5px;
+        font-size: 0.75rem;
+        color: #cecece;
+        font-weight: bold;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        border-right: 20px solid white;
+        border-top: 20px solid white;
+        border-left: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        bottom: -15px;
+        right: 0px;
+      }
+    }
+    .dataBar {
+      display: flex;
+      align-items: center;
+      width: 400px;
+      height: 10px;
+      border-radius: 20px;
+      padding: 2px;
+      background-color: var(--veryDarkBlue);
+
+      .dataValue {
         align-items: center;
-        width: 400px;
-        height: 10px;
+        display: flex;
+        justify-content: flex-end;
+        height: inherit;
+        background-image: linear-gradient(
+          to right,
+          hsl(6, 100%, 80%),
+          hsl(335, 100%, 65%)
+        );
+        width: 80%;
         border-radius: 20px;
-        padding: 2px;
-        background-color: var(--veryDarkBlue);
-
-        .dataValue {
-          display: flex;
-          justify-content: flex-end;
-          height: inherit;
-          background-image: linear-gradient(
-            to right,
-            hsl(6, 100%, 80%),
-            hsl(335, 100%, 65%)
-          );
-          width: 80%;
-          border-radius: 20px;
-        }
-        .whiteDot {
-          background-color: #ffffff;
-          border-radius: 25px;
-          height: inherit;
-          height: 0.75rem;
-          width: 0.75rem;
-        }
+      }
+      .whiteDot {
+        background-color: #ffffff;
+        border-radius: 25px;
+        height: inherit;
+        height: 0.75rem;
+        width: 0.75rem;
+      }
+    }
+    .label {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      .label-text {
+        font-weight: bold;
+        font-size: 0.75rem;
       }
     }
   }
@@ -108,19 +151,33 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-  .container {
+  body {
     background-image: url(../../images/bg-mobile.png);
     background-position: center;
     background-size: cover;
 
-    .cards {
+    .container {
       flex-direction: column;
       justify-content: center;
       position: relative;
-      width: 90%;
+      width: 100%;
 
       .card-2 {
         margin-top: 1rem;
+        padding-bottom: 40px;
+
+        .dataBar {
+          width: auto;
+        }
+
+        .popUp {
+          top: 75%;
+          left: 25%;
+
+          &::before {
+            display: none;
+          }
+        }
       }
     }
   }
