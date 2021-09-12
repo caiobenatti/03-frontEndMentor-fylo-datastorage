@@ -33,9 +33,6 @@ body {
   justify-content: center;
   position: relative;
 
-  .cards > * {
-    margin: 0px 15px;
-  }
   .card-1 {
     background-color: var(--darkBlue);
     border-radius: 15px 90px 15px 15px;
@@ -107,7 +104,8 @@ body {
       height: 10px;
       border-radius: 20px;
       padding: 2px;
-      background-color: var(--veryDarkBlue);
+      filter: back;
+      background-color: rgba($color: #0c122c, $alpha: 0.6);
 
       .dataValue {
         align-items: center;
@@ -140,6 +138,9 @@ body {
       }
     }
   }
+}
+.container > * {
+  margin: 0px 15px;
 }
 
 .attribution {
